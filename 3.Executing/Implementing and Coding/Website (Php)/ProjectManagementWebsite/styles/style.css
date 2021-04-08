@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css?family=Nova+Round&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
+#slider-container{
+    position: relative;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    width: 98%;
+    height: 86.2vh;
+    padding:0;
+}
+#slider-container ul{
+    margin:0 0 40px;
+    padding:0;
+    position:relative;
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#slider-container ul li{
+    margin:0 0 40px;
+    list-style: none;
+}
+#slider-container ul li .slide{
+position: absolute;
+top:0;
+left:0;
+width: 100%;
+height:100%;
+transition: transform 0.7s;
+transform: rotateY(90deg);
+transform-origin: left;
+}
+
+#slider-container ul li input[type="radio"]{
+    position: relative;
+    z-index: 1;
+    height:20px;
+    width:20px;
+    
+}
+#slider-container ul li input[type="radio"]{
+    margin-left: 10px;
+}
+#slider-container ul li input[type="radio"]:checked~.slide{
+transition: transform 0.7s;
+transform: rotateY(0deg);
+transform-origin: right;
+}
+
+#slider-container ul li .slide .content{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+#slider-container ul li .slide img{
+    object-fit:cover;
+    position: absolute;
+    top: 0;
+    left:0;
+}
+#slider-container ul li input[type="radio"]:checked~.slide img{
+    animation: animate 40s linear infinite;
+
+}
+@keyframes animate{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+.button-hero {
+    padding: 12px 41px;
+}
+.button {
+    display: inline-block;
+    border: 1px solid #56b66e;
+    border-radius: 30px;
+    font-weight: 500;
+    padding: 12px 50px;
+    background: rgb(86, 182, 110,.4);
+    color: #fff !important;
+    transition: all .6s ease;
+}
+
+
+i.about{
+    margin-bottom:10px;
+    width:115px; 
+    line-height: 70px;
+    color:white;
+    background:green;
+    padding:20px;
+    border-radius:50%;
+}
+.abouticon{
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom:30px;
+}
+.abouticon h5{
+    font-family: 'Nova Round', cursive;
+}
+.abouticon p{
+    font-size:21px;
+    letter-spacing: 1px;
+    font-family: 'Teko', sans-serif;
+    color: rgb(230, 101, 50);
+}
+.abouticon i:hover{
+color:green;
+background:white;
+}
+.moredetails{
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-top: 50px;
+    border-radius: 10%;
+    margin-bottom:20px;
+    height:230px;
+    width:100%;
+}
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, -0px); }    
+}
+.word{
+    border-radius: 10%;
+    margin-top: 50px;
+    height:230px;
+    text-align: center;
+}
+.word h4{
+color:green;
+font-size:30px;
+margin-top:20%;
+font-family: 'Nova Round', cursive;
+}
+.word p{
+    font-size:20px;
+    color: rgb(230, 101, 50);
+
+}
+.emptyspace{
+    padding:3.2rem;
+}
+.productabout{
+    margin-bottom: 35px;
+    color:green;
+    font-family: 'Nova Round', cursive;
+}
+.prod{
+    transform: scale(0.8);
+    width:100%;
+    height:180px;
+}
+.prod:hover{
+    transform: scale(1);
+}
+.outline{
+height:281px;    
+margin-right:2px;    
+border: 1px solid #f0f0f0;
+margin-bottom:22px;
+}
+.outline:hover{
+    transition:all 1.000s ease;
+    box-shadow: 0px 0px 0px 2px rgb(238, 237, 176);
+}
+.status{
+    position: absolute;
+    top:0;
+    left:15px;
+    background: #82ae46;
+    color:white;
+    padding:2px 10px;
+}
+.data{
+    text-align:center;
+    font-family: 'Nova Round', cursive;
+}
+.data p{
+    color:#82ae46;
+    position: absolute;
+    left:43%;
+    font-size:17px;
+}
+.data i{
+    visibility: hidden;
+    margin-bottom: 5px;
+    color:white;
+    background:green;
+    padding:10px;
+    border-radius:50%;
+    background:#82ae46;
+}
+.data i:hover{
+    transform: scale(1.1);
+}
+.data a{
+    pointer-events: none;
+}
+.news input{
+    margin-top:18px;
+    border: 1px solid transparent;
+    font-size: 17px;
+    font-weight: 300;
+    width: 52%;
+    height: 52px;
+}
+.news input::placeholder{
+    padding:15px;
+}
+.news{
+    font-family: 'Nova Round', sans-serif;
+    padding:55px;
+    background-color: #f7f6f2;
+}
+.news h3{
+    font-family: 'Teko', sans-serif;
+}
+.news button{
+    margin-top:-5px;
+    margin-left: -10px;
+    background-color: #82ae46;
+    padding:14.5px;
+    color:white;
+}

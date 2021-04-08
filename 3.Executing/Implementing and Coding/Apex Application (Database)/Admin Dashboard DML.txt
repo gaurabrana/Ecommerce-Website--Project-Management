@@ -1,0 +1,16 @@
+----Most Sold Products
+select shop.tradertype, product.name,sum(quantity) from orderdetails, product, shop
+where orderdetails.productid = product.productid
+and product.shopid = shop.shopid
+group by product.name,shop.tradertype
+having sum(quantity) > 50
+;
+
+--Highest Priced Product
+select name,price from product;
+
+----Most Rated Product
+select product.name,sum(rate)/count(review.userid) as rating from review, product
+where review.productid = product.productid
+group by product.name
+;

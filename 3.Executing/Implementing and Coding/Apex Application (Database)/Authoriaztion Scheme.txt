@@ -1,0 +1,29 @@
+---Admin
+select 1
+from users
+where upper(email) = :APP_USER and userid=1;
+
+--Butcher
+select 1
+from users
+where upper(email) = :APP_USER and (userid=1 or userid=2);
+
+--Bakery
+select 1
+from users
+where upper(email) = :APP_USER and (userid=1 or userid=5);
+
+--Delicatessen
+select 1
+from users
+where upper(email) = :APP_USER and (userid=1 or userid=6);
+
+--Fishmonger
+select 1
+from users
+where upper(email) = :APP_USER and (userid=1 or userid=4);
+
+----Greengrocer
+select 1
+from users
+where upper(email) = :APP_USER and (userid=1 or userid=3);

@@ -1,0 +1,82 @@
+---Butcher
+--Ordered Products Quantity
+select product.name,sum(quantity) from orderdetails,product where orderdetails.productid = product.productid and
+product.shopid = 1
+group by product.name
+;
+
+--Highest Priced Product
+select name,price from product where
+product.shopid = 1;
+
+--Products Stock Level
+select name,QTYINSTOCK from product where
+product.shopid = 1;
+
+
+---Bakery
+--Ordered Products Quantity
+select product.name,sum(quantity) from orderdetails,product where orderdetails.productid = product.productid and
+product.shopid = 4
+group by product.name
+;
+
+--Highest Priced Product
+select name,price from product where
+product.shopid = 4;
+
+--Products Stock Level
+select name,QTYINSTOCK from product where
+product.shopid = 4;
+
+---Fishmonger
+--Ordered Products Quantity
+select product.name,sum(quantity) from orderdetails,product where orderdetails.productid = product.productid and
+product.shopid = 3
+group by product.name
+;
+
+--Highest Priced Product
+select name,price from product where
+product.shopid = 3;
+
+--Products Stock Level
+select name,QTYINSTOCK from product where
+product.shopid = 3;
+
+---Greengrocer
+--Ordered Products Quantity
+select product.name,sum(quantity) from orderdetails,product where orderdetails.productid = product.productid and
+product.shopid = 2
+group by product.name
+;
+
+--Highest Priced Product
+select name,price from product where
+product.shopid = 2;
+
+--Products Stock Level
+select name,QTYINSTOCK from product where
+product.shopid = 2;
+
+---Delicatessen
+--Ordered Products Quantity
+select product.name,sum(quantity) from orderdetails,product where orderdetails.productid = product.productid and
+product.shopid = 5
+group by product.name
+;
+
+--Highest Priced Product
+select name,price from product where
+product.shopid = 5;
+
+--Products Stock Level
+select name,QTYINSTOCK from product where
+product.shopid = 5;
+
+
+
+
+
+
+

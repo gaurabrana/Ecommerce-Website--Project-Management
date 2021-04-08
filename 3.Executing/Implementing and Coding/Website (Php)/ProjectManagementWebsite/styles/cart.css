@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+    font-family: "Roboto",sans-serif !important;
+}
+.card-bodys{
+    text-align:center;
+    padding:100px !important;
+    background-color: white;
+    margin-bottom:50px;
+    cursor: pointer;    
+    font-size: larger !important;
+    color: black !important;
+    background: linear-gradient(to right, #f5faf7, #ebf3ef);
+    border: 0;            
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+.image{
+    width:200px;
+    height: 120px;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;    
+  }
+  .description{
+    vertical-align: middle !important;
+  }
+  input[type='number']{
+      width: 70px;
+      background-color: rgb(245, 245, 245);
+  }
+  .cartbutton{
+    float:right;
+    border:1px solid green !important;
+    background-color: green !important;
+    color:#fff !important;
+    border-radius:20px !important;
+  }
+  .cartbutton:hover{
+    background-color: white !important;
+    color: green !important;
+  }
+  .hi{
+    border:none;
+    background-color: inherit;
+  }
+  .undiscount{
+    text-decoration: line-through;
+  }

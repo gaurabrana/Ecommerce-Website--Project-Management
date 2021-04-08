@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Nova+Round&display=swap');
+.nav-item{
+    font-family: 'Nova Round', cursive;
+    font-size: 14px;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    padding-left: 15px;
+    padding-right: 5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-item a:hover{
+    text-decoration: underline !important;
+}
+.active{
+    font-weight: bolder !important;
+}
+
+input.empty {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+.navbar-brand{
+font-size:22px !important;
+font-weight: 500;
+color:#82ae46 !important;
+}
+
+a{
+    text-decoration-line: none !important;
+    color:black !important;
+}
+footer{
+    margin-top: 20px;
+    font-family: 'Nova Round', cursive;
+}
+footer h2{
+    text-decoration: underline;
+}
+
+footer i{
+    margin-right:5px;
+}
+img.logo{
+    width: 130px;
+}
+img.logo:hover{
+    transition: ease-in-out;
+    transform: scale(0.9)
+}

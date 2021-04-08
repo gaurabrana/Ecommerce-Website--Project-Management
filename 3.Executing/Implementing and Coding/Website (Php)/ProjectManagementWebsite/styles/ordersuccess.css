@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+    font-family: "Roboto",sans-serif !important;
+}
+
+.order,.shippingaddress{
+padding:18px;
+background-color: #f1f6f7;
+}
+.collectionslot{
+    background-color: #f1f6f7;
+}
+
+.ordered_products{
+    margin-top:20px;
+    background-color: #f1f6f7;
+    padding:39px;
+}
+ul{
+    list-style-type: none;
+}
+.order_box {
+    background: #e8f0f2;
+    padding: 30px;
+ }
+ .order_box h2 {
+    border-bottom: 1px solid #dddddd;
+    font-size: 18px;
+    font-weight: 500;
+    color: #222;
+    padding-bottom: 15px;
+ }
+ .order_box .list li a {
+    font-size: 14px;
+    color: #777 !important;
+    font-weight: normal;
+    border-bottom: 1px solid #eeeeee;
+    display: block;
+    line-height: 42px;
+ }
+ .order_box .list li a h4 {
+    font-family: "Roboto",sans-serif;
+    font-size: 15px;
+    margin-top: 15px;
+    color: #000000 !important;
+ }
+ .order_box .list li a span {
+    float: right;
+ }
+ .order_box .list_2 li a {
+    text-transform: uppercase;
+    color: #222 !important;
+    font-weight: 500;
+ }
+ .order_box .list_2 li a span {
+    color: #777 !important;   
+ }
+ .order_box .list_2 li:last-child a span {
+    color: #222 !important;
+ }
+
+table {
+    border-collapse: collapse;
+}

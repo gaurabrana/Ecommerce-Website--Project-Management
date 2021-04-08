@@ -1,0 +1,83 @@
+--SIDE BY SIDE MASTER TABLE,
+--MASTER TABLE USERS
+--DETAIL TABLE 1 SHOP
+--DETAIL TABLE 2 PRODUCT
+--DETAIL TABLE 3 DISCOUNT
+--DETAIL TABLE 4 REVIEW
+
+--MASTER RECORD
+select "USERID",
+    null link_class,
+    apex_page.get_url(p_items => 'P28_USERID', p_values => "USERID") link,
+    null icon_class,
+    null link_attr,
+    null icon_color_class,
+    case when nvl(:P28_USERID,'0') = "USERID"
+      then 'is-active' 
+      else ' '
+    end list_class,
+    substr("NAME", 1, 50)||( case when length("NAME") > 50 then '...' end ) list_title,
+    substr("EMAIL", 1, 50)||( case when length("EMAIL") > 50 then '...' end ) list_text,
+    null list_badge
+from "USERS" x
+where (:P28_SEARCH is null
+        or upper(x."NAME") like '%'||upper(:P28_SEARCH)||'%'
+        or upper(x."EMAIL") like '%'||upper(:P28_SEARCH)||'%'
+    ) and types=1
+order by "NAME";
+
+--USERS
+select USERID,
+       TYPES,
+       NAME,
+       ADDRESS,
+       AGE,
+       GENDER,
+       EMAIL,
+       PASSWORD,
+       VERIFICATION_KEY,
+       VERIFIED,
+       IMAGE_NAME,
+       JOINED_DATE
+  from USERS
+ where "USERID" = :P28_USERID;
+
+--SHOP
+select ROWID,
+       SHOPID,
+       TRADERTYPE,
+       USERID
+  from SHOP
+ where "USERID" = :P28_USERID;
+
+--PRODUCT
+select ROWID,
+       PRODUCTID,
+       NAME,
+       DESCRIPTION,
+       PRODUCT_TYPE,
+       PRICE,
+       QTYINSTOCK,
+       SHOPID,
+       USERID,
+       DISCOUNTID,
+       IMAGE_NAME
+  from PRODUCT
+ where "USERID" = :P28_USERID;
+
+--DISCOUNT
+select ROWID,
+       DISCOUNTID,
+       AMOUNT,
+       USERID
+  from DISCOUNT
+ where "USERID" = :P28_USERID;
+
+--REVIEW
+select REVIEWID,
+       REVIEW.DESCRIPTION,
+       PRODUCT.PRODUCTID,
+       REVIEW.USERID,       
+       RATE
+  from REVIEW,PRODUCT,SHOP
+ where SHOP.USERID = :P28_USERID AND SHOP.SHOPID = PRODUCT.SHOPID AND PRODUCT.PRODUCTID = REVIEW.PRODUCTID;

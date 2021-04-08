@@ -1,0 +1,69 @@
+--SIDE BY SIDE MASTER DETAIL TABLE,
+--MASTER TABLE USERS
+--DETAIL TABLE 1 CART
+--DETAIL TABLE 2 PAYMENT
+--DETAIL TABLE 3 REVIEW
+
+--MASTER RECORD
+select "USERID",
+    null link_class,
+    apex_page.get_url(p_items => 'P29_USERID', p_values => "USERID") link,
+    null icon_class,
+    null link_attr,
+    null icon_color_class,
+    case when nvl(:P29_USERID,'0') = "USERID"
+      then 'is-active' 
+      else ' '
+    end list_class,
+    substr("NAME", 1, 50)||( case when length("NAME") > 50 then '...' end ) list_title,
+    substr("EMAIL", 1, 50)||( case when length("EMAIL") > 50 then '...' end ) list_text,
+    null list_badge
+from "USERS" x
+where (:P29_SEARCH is null
+        or upper(x."NAME") like '%'||upper(:P29_SEARCH)||'%'
+        or upper(x."EMAIL") like '%'||upper(:P29_SEARCH)||'%'
+    ) and types=2
+order by "NAME";
+
+--USERS
+select USERID,
+       TYPES,
+       NAME,
+       ADDRESS,
+       AGE,
+       GENDER,
+       EMAIL,
+       PASSWORD,
+       VERIFICATION_KEY,
+       VERIFIED,
+       IMAGE_NAME,
+       JOINED_DATE
+  from USERS
+ where "USERID" = :P29_USERID;
+
+--CART
+select ROWID,
+       CARTID,
+       USERID
+  from CART
+ where "USERID" = :P29_USERID;
+
+--PAYMENT
+select ROWID,
+       PAYMENTID,
+       USERID,
+       ORDERID,
+       TOTALPRICE,
+       PAIDDATE
+  from PAYMENT
+ where "USERID" = :P29_USERID;
+
+--REVIEW
+select ROWID,
+       REVIEWID,
+       DESCRIPTION,
+       PRODUCTID,
+       USERID,
+       RATE
+  from REVIEW
+ where "USERID" = :P29_USERID
